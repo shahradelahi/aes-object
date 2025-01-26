@@ -1,5 +1,3 @@
-import type { enc } from 'crypto-js';
-
 export type ObjectLike =
   | Record<string | number | symbol, unknown>
   | Array<unknown>
@@ -26,11 +24,4 @@ export interface AesDecryptObjectParams {
    * The secret key used for decryption.
    */
   readonly secretKey: string;
-  /**
-   * The text encoder for decoding the bytes.
-   * Defaults to {@link Encoder.Utf8} if not specified.
-   */
-  readonly encoder?: Encoder;
 }
-
-export type Encoder = typeof enc.Utf8;

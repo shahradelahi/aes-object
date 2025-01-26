@@ -1,5 +1,5 @@
-import { enc } from 'crypto-js';
 import AES from 'crypto-js/aes';
+import UTF8 from 'crypto-js/enc-utf8';
 
 import type { AesDecryptObjectParams, AesEncryptObjectParams, ObjectLike } from '@/typings';
 
@@ -27,11 +27,10 @@ export function encryptObject<T extends ObjectLike>(params: AesEncryptObjectPara
  * @param {AesDecryptObjectParams} params - The decryption parameters.
  * @param {string} params.input - The encrypted string in Hex format.
  * @param {string} params.secretKey - The secret key used for decryption.
- * @param {Encoder} [params.encoder=enc.Utf8] - The text encoder for decoding the bytes. Defaults to Utf8.
  * @returns {T | null} The decrypted object if successful, or null if decryption fails.
  */
 export function decryptObject<T extends ObjectLike>(params: AesDecryptObjectParams): T | null {
-  const { input, secretKey, encoder = enc.Utf8 } = params;
+  const { input, secretKey } = params;
 
   if (typeof (input as unknown) !== 'string' || typeof (secretKey as unknown) !== 'string') {
     return null;
@@ -40,16 +39,11 @@ export function decryptObject<T extends ObjectLike>(params: AesDecryptObjectPara
   const bytes = AES.decrypt(input, secretKey);
 
   try {
-    const result = JSON.parse(bytes.toString(encoder));
+    const result = JSON.parse(bytes.toString(UTF8));
     return result as T;
   } catch (error) {
     return null;
   }
 }
 
-export type {
-  AesDecryptObjectParams,
-  AesEncryptObjectParams,
-  ObjectLike,
-  Encoder,
-} from './typings';
+export type { AesDecryptObjectParams, AesEncryptObjectParams, ObjectLike };
