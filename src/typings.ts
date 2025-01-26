@@ -7,14 +7,30 @@ export type ObjectLike =
   | object;
 
 export interface AesEncryptObjectParams<T extends ObjectLike> {
-  input: T;
-  secretKey: string;
+  /**
+   * The object to be encrypted.
+   */
+  readonly input: T;
+  /**
+   * The secret key used for encryption.
+   */
+  readonly secretKey: string;
 }
 
 export interface AesDecryptObjectParams {
-  input: string;
-  secretKey: string;
-  encoder?: Encoder;
+  /**
+   * The encrypted string in Hex format.
+   */
+  readonly input: string;
+  /**
+   * The secret key used for decryption.
+   */
+  readonly secretKey: string;
+  /**
+   * The text encoder for decoding the bytes.
+   * Defaults to {@link Encoder.Utf8} if not specified.
+   */
+  readonly encoder?: Encoder;
 }
 
 export type Encoder = typeof enc.Utf8;
