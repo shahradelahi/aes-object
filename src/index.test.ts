@@ -10,6 +10,8 @@ describe('aes-object', () => {
       const encryptedData = encryptObject({ input, secretKey });
       const decryptedData = decryptObject({ input: encryptedData, secretKey });
       expect(decryptedData).toEqual(input);
+      const encryptedData2 = encryptObject({ input, secretKey });
+      expect(encryptedData).not.toEqual(encryptedData2);
     });
 
     test('should throw an error if data is not an object', () => {
@@ -37,7 +39,8 @@ describe('aes-object', () => {
     });
 
     test('should return null if decryption fails', () => {
-      const input = 'U2FsdGVkX1+D+qc8JBrry6u/Umr+iYQ0ayfD37T7BzbEH5a6YwnAl2dU3T/pu20C';
+      const input =
+        'O3RLigH6ASctDE1NjZKEhDO43USj4lZbO7NSvGlygMg4XJKfntgZtFZS6c3z+OGbWp+D+NImDDRyDBtITEhrVw==';
       const wrongKey = 'wrong-key';
       const decryptedData = decryptObject({ input, secretKey: wrongKey });
       expect(decryptedData).toBeNull();
