@@ -1,3 +1,4 @@
+import MSGPack from '@se-oss/msgpack';
 import AES from 'crypto-js/aes';
 import UTF8 from 'crypto-js/enc-utf8';
 
@@ -17,7 +18,7 @@ export function encryptObject<T extends ObjectLike>(params: AesEncryptObjectPara
   if (typeof params.input !== 'object') {
     throw new TypeError('input must be an object');
   }
-  return AES.encrypt(JSON.stringify(params.input), params.secretKey).toString();
+  return AES.encrypt(MSGPack.stringify(params.input), params.secretKey).toString();
 }
 
 /**
@@ -39,7 +40,7 @@ export function decryptObject<T extends ObjectLike>(params: AesDecryptObjectPara
   const bytes = AES.decrypt(input, secretKey);
 
   try {
-    const result = JSON.parse(bytes.toString(UTF8));
+    const result = MSGPack.parse(bytes.toString(UTF8));
     return result as T;
   } catch (error) {
     return null;
