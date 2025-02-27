@@ -41,6 +41,7 @@
   },
   "prettier": "@shahrad/prettier-config",
   "dependencies": {
+    "@se-oss/msgpack": "^1.0.0",
     "crypto-js": "^4.2.0"
   },
   "devDependencies": {
