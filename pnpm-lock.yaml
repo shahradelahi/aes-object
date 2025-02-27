@@ -19,8 +19,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0(typescript@5.7.3)
       '@shahrad/prettier-config':
-        specifier: ^1.2.0
-        version: 1.2.0(prettier@3.5.2)
+        specifier: ^1.2.1
+        version: 1.2.1(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.5.2))(prettier-plugin-packagejson@2.5.8(prettier@3.5.2))(prettier-plugin-sh@0.15.0(prettier@3.5.2))(prettier@3.5.2)
       '@sindresorhus/tsconfig':
         specifier: ^7.0.0
         version: 7.0.0
@@ -446,10 +446,13 @@ packages:
   '@shahrad/eslint-config@1.0.0':
     resolution: {integrity: sha512-J/RJBYyva4REnQr9C/pvT/9ydPX8zKwoV1ltzmKicX5IQKqN5S/1nrFmkZvSg8MoaXM2WM4AsNZVklTxDeW0+g==}
 
-  '@shahrad/prettier-config@1.2.0':
-    resolution: {integrity: sha512-vC4mYYsg7OMylfUtrRPdp1ZYU1DLRy/JUd3fpZ94TjaTpA6W6gMzmNJJ3tzKK55pnbGhS9ft0yY/U6iRj7dqrQ==}
+  '@shahrad/prettier-config@1.2.1':
+    resolution: {integrity: sha512-fIeFiSlUSEiimbstk2nGT/+Q8znSurOIp7dvNJxSrSUkPZJ4zjx/UOKaUECx6JAGsx9a4TajxiEWPmZQ8gSMkw==}
     peerDependencies:
+      '@ianvs/prettier-plugin-sort-imports': ^4.4
       prettier: '>=3.0.0'
+      prettier-plugin-packagejson: ^2.5
+      prettier-plugin-sh: ^0.15
 
   '@sindresorhus/tsconfig@7.0.0':
     resolution: {integrity: sha512-i5K04hLAP44Af16zmDjG07E1NHuDgCM07SJAT4gY0LZSRrWYzwt4qkLem6TIbIVh0k51RkN2bF+lP+lM5eC9fw==}
@@ -1061,8 +1064,8 @@ packages:
       prettier:
         optional: true
 
-  prettier-plugin-sh@0.14.0:
-    resolution: {integrity: sha512-hfXulj5+zEl/ulrO5kMuuTPKmXvOg0bnLHY1hKFNN/N+/903iZbNp8NyZBTsgI8dtkSgFfAEIQq0IQTyP1ZVFQ==}
+  prettier-plugin-sh@0.15.0:
+    resolution: {integrity: sha512-U0PikJr/yr2bzzARl43qI0mApBj0C1xdAfA04AZa6LnvIKawXHhuy2fFo6LNA7weRzGlAiNbaEFfKMFo0nZr/A==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.0.3
@@ -1683,15 +1686,12 @@ snapshots:
       - supports-color
       - typescript
 
-  '@shahrad/prettier-config@1.2.0(prettier@3.5.2)':
+  '@shahrad/prettier-config@1.2.1(@ianvs/prettier-plugin-sort-imports@4.4.1(prettier@3.5.2))(prettier-plugin-packagejson@2.5.8(prettier@3.5.2))(prettier-plugin-sh@0.15.0(prettier@3.5.2))(prettier@3.5.2)':
     dependencies:
       '@ianvs/prettier-plugin-sort-imports': 4.4.1(prettier@3.5.2)
       prettier: 3.5.2
       prettier-plugin-packagejson: 2.5.8(prettier@3.5.2)
-      prettier-plugin-sh: 0.14.0(prettier@3.5.2)
-    transitivePeerDependencies:
-      - '@vue/compiler-sfc'
-      - supports-color
+      prettier-plugin-sh: 0.15.0(prettier@3.5.2)
 
   '@sindresorhus/tsconfig@7.0.0': {}
 
@@ -2291,7 +2291,7 @@ snapshots:
     optionalDependencies:
       prettier: 3.5.2
 
-  prettier-plugin-sh@0.14.0(prettier@3.5.2):
+  prettier-plugin-sh@0.15.0(prettier@3.5.2):
     dependencies:
       mvdan-sh: 0.10.1
       prettier: 3.5.2
