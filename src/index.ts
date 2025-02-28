@@ -78,11 +78,10 @@ export function decryptObject<T extends ObjectLike>(params: AesDecryptObjectPara
     },
     key,
     { iv }
-  ).toString();
-  const decryptedHex = CryptoJS.enc.Hex.parse(decrypted).toString(CryptoJS.enc.Utf8);
+  ).toString(CryptoJS.enc.Utf8);
 
   try {
-    const result = MSGPack.parse(decryptedHex);
+    const result = MSGPack.parse(decrypted);
     return result as T;
   } catch (error) {
     return null;
