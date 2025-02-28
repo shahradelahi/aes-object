@@ -1,6 +1,6 @@
 {
   "name": "aes-object",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "AES encryption for objects",
   "keywords": [
     "aes",
