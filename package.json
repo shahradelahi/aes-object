@@ -51,7 +51,7 @@
     "@changesets/cli": "^2.31.1",
     "@shahrad/eslint-config": "^1.0.0",
     "@shahrad/prettier-config": "^1.2.0",
-    "@sindresorhus/tsconfig": "^7.0.0",
+    "@sindresorhus/tsconfig": "^8.0.0",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^22.13.5",
     "eslint": "^9.21.0",
