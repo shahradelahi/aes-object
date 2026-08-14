@@ -48,18 +48,18 @@
     "crypto-js": "^4.2.0"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.1",
-    "@shahrad/eslint-config": "^1.0.0",
-    "@shahrad/prettier-config": "^1.2.0",
-    "@sindresorhus/tsconfig": "^7.0.0",
+    "@changesets/cli": "^3.0.0",
+    "@shahrad/eslint-config": "^1.1.0",
+    "@shahrad/prettier-config": "^1.2.2",
+    "@sindresorhus/tsconfig": "^8.1.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.13.5",
-    "eslint": "^9.21.0",
-    "globals": "^16.0.0",
-    "prettier": "^3.5.2",
-    "tsup": "^8.4.0",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.7"
+    "@types/node": "^26.2.0",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
   },
-  "packageManager": "pnpm@9.15.6"
+  "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e"
 }

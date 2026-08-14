@@ -1,8 +1,5 @@
 export type ObjectLike =
-  | Record<string | number | symbol, unknown>
-  | Array<unknown>
-  | Buffer
-  | object;
+  Record<string | number | symbol, unknown> | Array<unknown> | Buffer | object;
 
 export interface AesEncryptObjectParams<T extends ObjectLike> {
   /**
