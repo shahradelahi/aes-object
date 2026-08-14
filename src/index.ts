@@ -28,6 +28,14 @@ function randomSalt(length = 16) {
  * @param {string} [params.iv] - The initialization vector (IV) for encryption. If not provided, a random IV will be generated.
  * @returns {string} The encrypted data as a string in Base64 format.
  * @throws {TypeError} If the input is not an object.
+ *
+ * @example
+ * ```ts
+ * const encrypted = encryptObject({
+ *   input: { message: 'Hello, world!' },
+ *   secretKey: 'my-secret-key',
+ * });
+ * ```
  */
 export function encryptObject<T extends ObjectLike>(params: AesEncryptObjectParams<T>): string {
   if (typeof params.input !== 'object') {
@@ -53,6 +61,14 @@ export function encryptObject<T extends ObjectLike>(params: AesEncryptObjectPara
  * @param {string} params.secretKey - The secret key used for decryption.
  * @param {string} [params.iv] - The initialization vector (IV) used for decryption. If not provided, it uses the IV from the encrypted data.
  * @returns {T | null} The decrypted object if successful, or null if decryption fails.
+ *
+ * @example
+ * ```ts
+ * const decrypted = decryptObject<{ message: string }>({
+ *   input: encrypted,
+ *   secretKey: 'my-secret-key',
+ * });
+ * ```
  */
 export function decryptObject<T extends ObjectLike>(params: AesDecryptObjectParams): T | null {
   const { input, secretKey } = params;
