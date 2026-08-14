@@ -53,7 +53,7 @@
     "@shahrad/prettier-config": "^1.2.0",
     "@sindresorhus/tsconfig": "^7.0.0",
     "@types/crypto-js": "^4.2.2",
-    "@types/node": "^22.13.5",
+    "@types/node": "^24.0.0",
     "eslint": "^9.21.0",
     "globals": "^16.0.0",
     "prettier": "^3.5.2",
